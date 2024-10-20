@@ -4,7 +4,9 @@
 
 ## PPT 编写建议
 
-### 在第二张幻灯片上开始演示
+下列文章列举了一些 PPT 演讲/写作技巧
+
+### 从第二张幻灯片上开始演示
 
 原文链接：<https://tidyfirst.substack.com/p/start-presentations-on-the-second>
 
