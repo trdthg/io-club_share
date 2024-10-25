@@ -1,6 +1,6 @@
 name: "茶话会报名"
 description: '参加茶话会需要提供部分必要信息'
-title: "[茶话会]: <请替换为标题>"
+title: "[茶话会] [<请替换为参加时间例如 2024-10-25>] [<请替换为时长例如 20 分钟>]: <请替换为标题>"
 labels: ["talk"]
 body:
   - type: input
@@ -29,22 +29,6 @@ body:
       placeholder: '提供内容摘要（可选）'
     validations:
       required: false
-  - type: input
-    id: duration
-    attributes:
-      label: '预计时长'
-      description: '预计完成内容所需时长'
-      placeholder: '例如: 20 分钟'
-    validations:
-      required: true
-  - type: input
-    id: participation_time
-    attributes:
-      label: '参加时间'
-      description: '请填写参加时间'
-      placeholder: '例如: 2024-10-25'
-    validations:
-      required: true
   - type: textarea
     id: other
     attributes:
