@@ -1,6 +1,6 @@
 name: "茶话会报名"
 description: '参加茶话会需要提供部分必要信息'
-title: "[茶话会]: "
+title: "[茶话会]: <请替换为标题>"
 labels: ["talk"]
 body:
   - type: input
@@ -19,14 +19,6 @@ body:
       options:
         - label: '技术类'
         - label: '其他'
-    validations:
-      required: true
-  - type: input
-    id: title
-    attributes:
-      label: '标题'
-      description: '分享内容题目'
-      placeholder: '例如: 小白也能听懂的蟒蛇吃法'
     validations:
       required: true
   - type: textarea
@@ -61,10 +53,13 @@ body:
       placeholder: '想写啥就写啥'
     validations:
       required: false
-  - type: markdown
+  - type: checkboxes
     id: pre_close_check
     attributes:
-      value: |
-        ### 关闭 Issue 前请先确认以下内容 (报名人不用填写)
-        - [ ] PPT 是否上传：<PR 链接>
-        - [ ] 视频是否上传：<视频链接>
+      label: '关闭 Issue 前请先确认以下内容'
+      description: '报名人不需要填写'
+      options:
+        - label: 'PPT 是否上传：<PR 链接>'
+        - label: '视频是否上传：<视频链接>'
+    validations:
+      required: false
