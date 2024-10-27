@@ -3,11 +3,21 @@ description: '开发任务等'
 title: "[任务]: "
 labels: ["task"]
 body:
-  - type: input
+  - type: textarea
     attributes:
       label: '如何认领'
       description: '请详细如何领取任务'
-      value: '请直接在下方回复，我会把 issue 的 assignees 设置为你'
+      value: |
+        请直接在下方回复，我会把 issue 的 assignees 设置为你
+
+        认领者需要遵守以下要求
+
+        - 每周必须在评论中更新进度，无论是学习进度还是开发进度
+        - 如果**两周**内没人任何进展, 则认定为认领失败, assign 将被取消，可以由其他人认领
+        - 如遇到节假日等特殊情况，同步进度日期可以顺延
+
+        > 学习也算进展，所以小白不必担心
+
     validations:
       required: false
   - type: textarea
@@ -35,7 +45,7 @@ body:
   - type: textarea
     attributes:
       label: '文档资料'
-      description: '为任务认领者提供尽可能全面的资料，已列表形式列出'
+      description: '请假设任务认领者为实实在在的小白，提供尽可能全面的资料，以列表形式列出'
       placeholder: |
         例如：
         - github 文档: docs.github.com/zh/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
@@ -46,14 +56,14 @@ body:
       label: '难度'
       options:
         - 简单 (什么都不会也能学习做)
-        - 中等 (需要学习多种知识，但是工作量不大 1 周内可以完成)
+        - 中等 (需要学习多种知识，但是工作量不大，数周内可以完成)
         - 困难（工作量大，或技术方向困难）
     validations:
       required: true
   - type: textarea
     attributes:
       label: '能力要求'
-      description: '完成任务需要学习的能力'
+      description: '完成任务需要学习的知识'
       placeholder: |
         例如：
         - 需要能够正常访问 github, 并注册账号
@@ -64,9 +74,10 @@ body:
       required: true
   - type: checkboxes
     attributes:
-      label: '关闭 Issue 前请先确认以下内容'
+      label: '关闭 Issue 前请确认以下内容'
       description: '申请人不需要填写'
       options:
-        - label: '代码是否上传：<PR 链接>'
+        - label: '代码已经上传：<PR 链接>'
+        - label: '准备参加茶话会分享：<issue 链接>'
     validations:
       required: false
